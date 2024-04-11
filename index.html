@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>VISLA</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.8.21/Tone.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@magenta/music@^1.0.0/es6/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@magenta/music@^1.0.0"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+      </script>
+      <script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      </script>
+    </head>
+    <style>
+        #hr_top{
+            border-color:black;
+            border-width: 4px;
+            width: 50%;
+        }
+
+        #hr_bottom{
+            border-color:black;
+            border-width: 1px;
+            width: 50%;
+        }
+
+        div {
+            container-type: inline-size;
+        }
+        h1 {
+            font-size: 2.5cqw;
+        }
+        h3 {
+            font-size: 1.3cqw;
+        }
+        body {
+            overflow:scroll;
+        }
+    </style>
+    <body>
+        <div>
+            <hr id="hr_top" style="width:55%;">
+            <h1 style="text-align: center;">VISLA Benchmark</h1>
+            <h3 style="text-align: center;">Evaluating Embedding Sensitivity to Semantic and Lexical Alterations</h3>
+            <hr id="hr_bottom" style="width:55%;">
+        </div>
+        <div>
+        <center>
+            <b>Abstract</b>
+            <p style="text-align:justify; width:55%;">
+                Despite their remarkable successes, state-of-the-art language models face challenges in grasping certain important semantic details. This paper introduces the VISLA (Variance and Invariance to Semantic and Lexical Alterations) benchmark, designed to evaluate the semantic and lexical understanding of language models. VISLA presents a 3-way semantic (in)equivalence task with a triplet of sentences associated with an image, to evaluate both vision-language models (VLMs) and unimodal language models (ULMs). An evaluation involving 34 VLMs and 20 ULMs reveals surprising difficulties in distinguishing between lexical and semantic variations. Spatial semantics encoded by language models also appear to be highly sensitive to lexical information. Notably, text encoders of VLMs demonstrate greater sensitivity to semantic and lexical variations than unimodal text encoders. 
+                Our contributions include the unification of image-to-text and text-to-text retrieval tasks, an off-the-shelf evaluation without fine-tuning, and assessing LMs' semantic (in)variance in the presence of lexical alterations. The results highlight strengths and weaknesses across diverse vision and unimodal language models, contributing to a deeper understanding of their capabilities. 
+            </p>
+            <b> An Example from VISLA Benchmark </b><br/>
+            <div style="display:flex;width:55%;">
+                <img src="figure_intro.jpg" style="width:50%;object-fit: contain" >
+                <!-- <embed src="figure_intro.pdf" style="width:50%;" /> -->
+                <div style="display:flex;width:50%; flex-direction: column;">
+                    <div style="height:10%;"></div>
+                    <p style="text-align:justify;">Figure shows an example from our VISLA benchmark. $P_1$ and $P_2$ are semantically equivalent but lexically different while $N$ is semantically different than both $P_1$ and $P_2$ despite its lexical similarity with $P_1$. In our evaluations of state-of-the-art language models (consisting of 34 VLMs and 20 ULMs) on this example, we (surprisingly) find that none of them are able to successfully identify the semantically equivalent pair ($P_1$, $P_2$) from the semantically different pairs (($P_1$, $N$), ($P_2$, $N$)).</p>
+                    <p>
+                            <b>More Details and Experiments available in our working <a href="paper.pdf">draft</a>.</b> <br/>
+                            <b>Dataset will be made available soon!</b>
+                    </p>
+                </div>
+            </div>
+            
+            
+        </center>
+        </div>
+    </body>
+</html>
